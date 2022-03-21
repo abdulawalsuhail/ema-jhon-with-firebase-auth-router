@@ -7,4 +7,12 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 45px;
+    margin: 90px 50px;
+}
+
+@media screen and (max-width:1150) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
