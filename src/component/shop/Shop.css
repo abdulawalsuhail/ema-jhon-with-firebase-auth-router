@@ -10,6 +10,12 @@
     margin: 90px 50px;
 }
 
+.cart-container {
+    background-color: rgba(250, 177, 40, 0.583);
+    padding: 10px;
+    font-family: 'Lato';
+}
+
 @media screen and (max-width:1150) {
     .product-container {
         grid-template-columns: repeat(2, 1fr);
