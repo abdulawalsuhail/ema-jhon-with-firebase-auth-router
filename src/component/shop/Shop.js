@@ -1,3 +1,5 @@
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
@@ -42,7 +44,7 @@ const Shop = () => {
             <div className="cart-container">
                 <Cart cart={cart}>
 
-                    <button onClick={() => navigate('/order')} className='btn-clr'>Review Order</button>
+                    <button onClick={() => navigate('/order')} className='btn-clr'>Review Order <FontAwesomeIcon icon={faArrowRight} /></button>
 
                 </Cart>
             </div>
