@@ -30,7 +30,7 @@ const Oders = () => {
                 <div className="cart-containers">
                     <Cart cart={cart}>
 
-                        <button onClick={() => navigate('/inventory')} className='btn-clr'>Proceed Order <FontAwesomeIcon icon={faCreditCardAlt} /></button>
+                        <button onClick={() => navigate('/shipment')} className='btn-clr'>Proceed Order <FontAwesomeIcon icon={faCreditCardAlt} /></button>
 
 
                     </Cart>
