@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 45px;
-  margin: 90px 50px;
+  margin: 100px 50px;
 }
 
 .cart-container {
@@ -33,7 +33,7 @@
     background-color: orange;
     color: #fff;
 }
-@media screen and (max-width: 1150) {
+@media screen and (max-width: 950) {
   .product-container {
     grid-template-columns: repeat(2, 1fr);
   }

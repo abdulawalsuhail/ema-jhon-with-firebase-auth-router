@@ -3,18 +3,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
-import useProducts from '../../hooks/useProducts';
 import { addToDb } from '../../utilities/fakedb';
 import Cart from '../cart/Cart';
 import Product from '../product/Product';
 import './Shop.css';
 
 const Shop = () => {
-    const [products, setProducts] = useProducts();
-    const [cart, setCart] = useCart(products);
+    const [cart, setCart] = useCart();
     const navigate = useNavigate()
     const [pageCount, setPageCount] = useState(0)
     const [page, setPage] = useState(0)
+    const [size, setSize] = useState(10)
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/product?page=${page}&size=${size}`)
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [page, size])
 
     useEffect(() => {
         fetch('http://localhost:5000/productCount')
@@ -60,6 +66,12 @@ const Shop = () => {
                                 onClick={() => setPage(number)}
                             >{number + 1}</button>)
                     }
+
+                    <select onChange={e => setSize(e.target.value)}>
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="15">15</option>
+                    </select>
                 </div>
             </div>
             <div className="cart-container">
