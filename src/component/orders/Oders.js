@@ -15,16 +15,16 @@ const Oders = () => {
     const [cart, setCart] = useCart(products)
     const navigate = useNavigate()
     const handleRemoveCart = product => {
-        const rest = cart.filter(pd => pd.id !== product.id)
+        const rest = cart.filter(pd => pd._id !== product._id)
         setCart(rest)
-        removeFromDb(product.id)
+        removeFromDb(product._id)
     }
     return (
         <div>
             <div className='shop-container'>
                 <div className="review-items-container">
                     {
-                        cart.map(product => <ReviewItem key={product.id} product={product} handleRemoveCart={handleRemoveCart} />)
+                        cart.map(product => <ReviewItem key={product._id} product={product} handleRemoveCart={handleRemoveCart} />)
                     }
                 </div>
                 <div className="cart-containers">
